@@ -15,3 +15,6 @@ vector<int> nextSmallerElement(vector<int> &arr, int n)
     }
     return ans;
 }
+
+
+// time complexity = O(n)
