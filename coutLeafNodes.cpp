@@ -1,0 +1,31 @@
+
+    template <typename T>
+    class BinaryTreeNode {
+      public :
+        T data;
+        BinaryTreeNode<T> *left;
+        BinaryTreeNode<T> *right;
+
+        BinaryTreeNode(T data) {
+                this -> data = data;
+                left = NULL;
+                right = NULL;
+        }
+    };
+    
+
+void Inorder(BinaryTreeNode<int>* root,int &cnt){
+    if(root==NULL){
+        return ;
+    }
+    Inorder(root->left,cnt);
+    if(root->left==NULL && root->right==NULL){
+        cnt++;
+    }
+    Inorder(root->right,cnt);
+}
+int noOfLeafNodes(BinaryTreeNode<int> *root){
+    int cnt=0;
+    Inorder(root,cnt);
+    return cnt;
+}
